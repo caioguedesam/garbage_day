@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 namespace Biweekly
 {
-	public class PlayerInputController : MonoBehaviour, PlayerActions.IGameplayActions
+	public sealed class PlayerInputController : MonoBehaviour, PlayerActions.IGameplayActions
 	{
 		// References
 		private PlayerActions _actions = null;

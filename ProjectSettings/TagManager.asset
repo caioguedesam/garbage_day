@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - StackOrigin
+  - Ground
+  - Trash
   layers:
   - Default
   - TransparentFX
@@ -12,10 +13,10 @@ TagManager:
   - 
   - Water
   - UI
-  - StackOrigin
-  - 
-  - 
-  - 
+  - Ground
+  - Trash
+  - Player
+  - Dropped Trash
   - 
   - 
   - 
@@ -41,4 +42,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 4230378093
     locked: 0
