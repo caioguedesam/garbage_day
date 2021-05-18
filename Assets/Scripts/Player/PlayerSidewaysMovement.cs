@@ -7,6 +7,7 @@ namespace Biweekly
 		// References
 		private Rigidbody2D _body = null;
 		private PlayerInputController _input = null;
+		private TrashCollector _trashCollector = null;
 
 		[Header("Movement Variables")]
 		[SerializeField]
@@ -20,11 +21,14 @@ namespace Biweekly
 
 		private float _moveSpeed = 0f;
 		private bool _onMovement = false;
-		
+
+		private float WeightModifier => _trashCollector.CarryWeightModifier;
+
 		private void Awake()
 		{
 			_body = GetComponent<Rigidbody2D>();
 			_input = GetComponent<PlayerInputController>();
+			_trashCollector = GetComponent<TrashCollector>();
 		}
 
 		private void FixedUpdate()
@@ -35,7 +39,7 @@ namespace Biweekly
 		private void Move()
 		{
 			_moveSpeed = CalculateMoveSpeed();
-			_body.velocity = new Vector2(_moveSpeed, _body.velocity.y);
+			_body.velocity = new Vector2(_moveSpeed * WeightModifier, _body.velocity.y);
 		}
 
 		private float CalculateMoveSpeed()

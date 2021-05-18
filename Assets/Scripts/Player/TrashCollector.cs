@@ -7,12 +7,16 @@ namespace Biweekly
 		// References
 		[SerializeField]
 		private Transform _trashParent = null;
+		[SerializeField]
+		private CarryWeightList _carryWeightList = null;
 		
 		// Collection Variables
 		[SerializeField, Min(0)]
 		private int _carryCapacity = 1;
 		private int _carriedAmount = 0;
-		
+
+		public float CarryWeightModifier => _carryWeightList.GetWeightModifier(_carriedAmount);
+
 		public void CollectTrash(GameObject trashObj)
 		{
 			Trash trash = trashObj.GetComponent<Trash>();

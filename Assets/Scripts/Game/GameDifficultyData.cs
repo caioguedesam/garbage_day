@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Biweekly
 {
 	[CreateAssetMenu(fileName = "GameDifficultyData", menuName = "Biweekly/Week 1/Game Difficulty Data", order = 0)]
-	public class GameDifficultyData : ScriptableObject
+	public sealed class GameDifficultyData : ScriptableObject
 	{
 		[SerializeField]
 		private List<GameDifficultyIncrement> _difficultyIncrements = new List<GameDifficultyIncrement>();
