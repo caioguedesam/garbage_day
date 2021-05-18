@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2b01ef7158496686f2486f22358907, type: 3}
-  m_Name: TrashPrefabList
+  m_Script: {fileID: 11500000, guid: 79f755345f3c46df86cda44fbeab0c90, type: 3}
+  m_Name: GOEvent_DisposedTrash
   m_EditorClassIdentifier: 
-  _trashPrefabs:
-  - {fileID: 1807013431073613435, guid: 309662bdb6d859e4f9eb2ef0a7e5ed01, type: 3}
-  - {fileID: 1382114784591050490, guid: e34da0047afc2bc49a4a6af78e59848c, type: 3}
+  _description: 
+  _debug: 0

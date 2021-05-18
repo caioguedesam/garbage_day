@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,37 +8,40 @@ namespace Biweekly
 	{
 		// References
 		[SerializeField]
-		private SpawnerIncreaseTimes _increaseTimes = null;
-		
+		private GameDifficultyController _difficultyController = null;
+
 		// Spawner control variables
 		private List<TrashSpawner> _spawners = new List<TrashSpawner>();
-		private int _spawnerCount = 0;
+		private GameDifficultyIncrement DifficultyIncrement => _difficultyController.CurrentDifficultyIncrement;
+		private bool _active = false;
 
 		private void Awake()
 		{
-			_spawners = new List<TrashSpawner>(GetComponentsInChildren<TrashSpawner>(true));
+			_spawners = new List<TrashSpawner>(GetComponentsInChildren<TrashSpawner>());
+			_active = true;
 		}
 
 		private void Start()
 		{
-			StartCoroutine(SpawnerActivationRoutine());
+			StartCoroutine(SpawnRoutine());
 		}
 
-		private IEnumerator SpawnerActivationRoutine()
+		private IEnumerator SpawnRoutine()
 		{
-			Debug.Log("Started spawner activation");
-			while (_spawnerCount < _spawners.Count)
+			while (_active)
 			{
-				yield return new WaitForSeconds(_increaseTimes[_spawnerCount]);
-				ActivateNextSpawner();
+				float spawnCooldown = Random.Range(DifficultyIncrement.minSpawnCooldown,
+					DifficultyIncrement.maxSpawnCooldown);
+				Debug.Log($"Waiting {spawnCooldown} seconds for next spawn");
+				yield return new WaitForSeconds(spawnCooldown);
+				Spawn();
 			}
 		}
 
-		private void ActivateNextSpawner()
+		private void Spawn()
 		{
-			if (_spawnerCount > _spawners.Count - 1) return;
-			Debug.Log("Activating next spawner");
-			_spawners[_spawnerCount++].gameObject.SetActive(true);
+			TrashSpawner selectedSpawner = _spawners[Random.Range(0, _spawners.Count)];
+			selectedSpawner.Spawn();
 		}
 	}
 }
