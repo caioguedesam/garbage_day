@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using Common;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace Biweekly
 {
 	public sealed class Trash : MonoBehaviour
 	{
+		[SerializeField]
+		private GameObjectUnityEvent _onPlayerCollision = null;
 		[SerializeField]
 		private UnityEvent _onDrop = null;
 
@@ -14,7 +17,15 @@ namespace Biweekly
 			{
 				Drop();
 			}
-			// TODO: Collide with player
+			else if (other.gameObject.CompareTag("Player"))
+			{
+				HitPlayer();
+			}
+		}
+
+		private void HitPlayer()
+		{
+			_onPlayerCollision.Invoke(gameObject);
 		}
 
 		private void Drop()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807013431073613436}
   - component: {fileID: 1807013431073613435}
+  - component: {fileID: 7653035000862045666}
   - component: {fileID: 8936564502018524442}
   - component: {fileID: 5961298304686445360}
   m_Layer: 7
@@ -46,9 +47,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 981261f3e869442ab7ef0b5ef8ba151c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  _onPlayerCollision:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1f2f4e455e864d74987d0b0bdb516fad, type: 2}
+        m_TargetAssemblyTypeName: Common.BaseEvent`1[[UnityEngine.GameObject, UnityEngine
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onDrop:
     m_PersistentCalls:
       m_Calls:
@@ -76,6 +89,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7653035000862045666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807013431073613437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611c54fc361503b48a9ce4d0b3153032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minJumpHeight: 0.2
+  _maxJumpHeight: 1
+  _minJumpApexTime: 0.2
+  _maxJumpApexTime: 0.35
+  _jumpDistanceRange: 0.5
 --- !u!61 &8936564502018524442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -117,7 +147,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
