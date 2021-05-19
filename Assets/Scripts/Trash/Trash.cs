@@ -1,4 +1,6 @@
-﻿using Common;
+﻿using System;
+using System.Collections;
+using Common;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,10 +14,14 @@ namespace Biweekly
 		private UnityEvent _onDrop = null;
 		
 		// References
-		[SerializeField]
-		private Rigidbody2D _body = null;
+		private TrashMovement _movement = null;
 
-		public Rigidbody2D Body => _body;
+		public TrashMovement Movement => _movement;
+
+		private void Awake()
+		{
+			_movement = GetComponent<TrashMovement>();
+		}
 
 		private void OnCollisionEnter2D(Collision2D other)
 		{
@@ -23,9 +29,21 @@ namespace Biweekly
 			{
 				Drop();
 			}
-			else if (other.gameObject.CompareTag("Player"))
+		}
+
+		private void OnTriggerEnter2D(Collider2D other)
+		{
+			if (other.CompareTag("Trash Pickup Trigger"))
 			{
 				HitPlayer();
+			}
+		}
+
+		private void OnTriggerStay2D(Collider2D other)
+		{
+			if (other.CompareTag("Trash Disposal Destination") && _movement.IsFalling)
+			{
+				Kill();
 			}
 		}
 

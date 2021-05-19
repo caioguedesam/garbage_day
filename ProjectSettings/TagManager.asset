@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Trash
   - Trash Disposal Area
+  - Trash Pickup Trigger
+  - Trash Disposal Destination
   layers:
   - Default
   - TransparentFX
@@ -21,8 +23,8 @@ TagManager:
   - Bounds
   - Trash Disposal
   - Collected Trash
-  - 
-  - 
+  - Trash Pickup Trigger
+  - Disposal Destination
   - 
   - 
   - 

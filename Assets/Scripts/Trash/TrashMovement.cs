@@ -22,6 +22,8 @@ namespace Biweekly
 
 		private Vector2 _gravity = Vector2.zero;
 
+		public bool IsFalling => _body.velocity.y < 0f;
+
 		private void Awake()
 		{
 			_body = GetComponent<Rigidbody2D>();
@@ -35,6 +37,14 @@ namespace Biweekly
 		private void FixedUpdate()
 		{
 			_body.velocity += Time.fixedDeltaTime * _gravity;
+		}
+
+		public void Jump(float height, float time, float dist)
+		{
+			_gravity = GetGravity(height, time);
+			float velX = dist / time;
+			float velY = 2 * height / time;
+			_body.velocity = new Vector2(velX, velY);
 		}
 
 		private void RandomJump()

@@ -1,6 +1,4 @@
-﻿using System;
-using DG.Tweening;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Biweekly
@@ -63,15 +61,18 @@ namespace Biweekly
 		private void Dispose()
 		{
 			if (!_canDispose || _trashCollector.IsEmpty) return;
-
-			Debug.Log($"Trying to dispose...");
+			
 			Trash disposedTrash = _trashCollector.PopTrash();
 			if (disposedTrash == null) return;
+
+			Vector2 startPos = _disposalOrigin.position;
+			disposedTrash.transform.position = startPos;
+			disposedTrash.gameObject.SetActive(true);
 			
-			disposedTrash.transform.position = _disposalOrigin.position;
 			float jumpHeight = Random.Range(_minDisposeJumpHeight, _maxDisposeJumpHeight);
-			Sequence seq = disposedTrash.Body.DOJump(_disposalPoint.position, jumpHeight, 1, _disposeJumpTime, false);
-			seq.OnComplete(disposedTrash.Kill);
+			float jumpDist = ((Vector2)_disposalPoint.position - startPos).x;
+			
+			disposedTrash.Movement.Jump(jumpHeight, _disposeJumpTime/2f, jumpDist/2);
 		}
 	}
 }

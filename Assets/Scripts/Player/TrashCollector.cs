@@ -46,7 +46,6 @@ namespace Biweekly
 			if (_collectedTrash.Count == 0) return null;
 			
 			Trash popped = _collectedTrash.Pop();
-			popped.gameObject.SetActive(true);
 			popped.transform.SetParent(null);
 			
 			return popped;
