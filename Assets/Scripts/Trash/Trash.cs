@@ -10,6 +10,12 @@ namespace Biweekly
 		private GameObjectUnityEvent _onPlayerCollision = null;
 		[SerializeField]
 		private UnityEvent _onDrop = null;
+		
+		// References
+		[SerializeField]
+		private Rigidbody2D _body = null;
+
+		public Rigidbody2D Body => _body;
 
 		private void OnCollisionEnter2D(Collision2D other)
 		{

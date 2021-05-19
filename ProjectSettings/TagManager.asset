@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Trash
+  - Trash Disposal Area
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - Player
   - Dropped Trash
   - Bounds
-  - 
-  - 
+  - Trash Disposal
+  - Collected Trash
   - 
   - 
   - 

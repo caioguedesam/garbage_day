@@ -13,12 +13,6 @@ MonoBehaviour:
   m_Name: GameDifficultyData
   m_EditorClassIdentifier: 
   _difficultyIncrements:
-  - minSpawnCooldown: 10
-    maxSpawnCooldown: 15
-    timeUntilNextIncrement: 20
-  - minSpawnCooldown: 8
-    maxSpawnCooldown: 12
-    timeUntilNextIncrement: 20
   - minSpawnCooldown: 5
-    maxSpawnCooldown: 7
+    maxSpawnCooldown: 5
     timeUntilNextIncrement: 20
