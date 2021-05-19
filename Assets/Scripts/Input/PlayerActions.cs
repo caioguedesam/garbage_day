@@ -27,6 +27,14 @@ namespace Biweekly
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dispose"",
+                    ""type"": ""Button"",
+                    ""id"": ""69061efe-4148-4953-88c4-7bcb7b31b141"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -95,6 +103,28 @@ namespace Biweekly
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e0304d7-a780-453d-aeac-0d769255d619"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Dispose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b4041a4-4156-45c1-b11b-38f7eea051ee"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Dispose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -108,6 +138,11 @@ namespace Biweekly
                     ""devicePath"": ""<Keyboard>"",
                     ""isOptional"": false,
                     ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
                 }
             ]
         }
@@ -116,6 +151,7 @@ namespace Biweekly
             // Gameplay
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
             m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
+            m_Gameplay_Dispose = m_Gameplay.FindAction("Dispose", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -166,11 +202,13 @@ namespace Biweekly
         private readonly InputActionMap m_Gameplay;
         private IGameplayActions m_GameplayActionsCallbackInterface;
         private readonly InputAction m_Gameplay_Movement;
+        private readonly InputAction m_Gameplay_Dispose;
         public struct GameplayActions
         {
             private @PlayerActions m_Wrapper;
             public GameplayActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
             public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
+            public InputAction @Dispose => m_Wrapper.m_Gameplay_Dispose;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -183,6 +221,9 @@ namespace Biweekly
                     @Movement.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
                     @Movement.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
                     @Movement.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMovement;
+                    @Dispose.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDispose;
+                    @Dispose.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDispose;
+                    @Dispose.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDispose;
                 }
                 m_Wrapper.m_GameplayActionsCallbackInterface = instance;
                 if (instance != null)
@@ -190,6 +231,9 @@ namespace Biweekly
                     @Movement.started += instance.OnMovement;
                     @Movement.performed += instance.OnMovement;
                     @Movement.canceled += instance.OnMovement;
+                    @Dispose.started += instance.OnDispose;
+                    @Dispose.performed += instance.OnDispose;
+                    @Dispose.canceled += instance.OnDispose;
                 }
             }
         }
@@ -206,6 +250,7 @@ namespace Biweekly
         public interface IGameplayActions
         {
             void OnMovement(InputAction.CallbackContext context);
+            void OnDispose(InputAction.CallbackContext context);
         }
     }
 }

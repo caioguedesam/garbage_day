@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - StackOrigin
+  - Ground
+  - Trash
+  - Trash Disposal Area
+  - Trash Pickup Trigger
+  - Trash Disposal Destination
   layers:
   - Default
   - TransparentFX
@@ -12,15 +16,15 @@ TagManager:
   - 
   - Water
   - UI
-  - StackOrigin
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Trash
+  - Player
+  - Dropped Trash
+  - Bounds
+  - Trash Disposal
+  - Collected Trash
+  - Trash Pickup Trigger
+  - Disposal Destination
   - 
   - 
   - 
@@ -41,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 4230378093
     locked: 0
