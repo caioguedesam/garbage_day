@@ -41,7 +41,7 @@ namespace Biweekly
 		private void Spawn()
 		{
 			TrashSpawner selectedSpawner = _spawners[Random.Range(0, _spawners.Count)];
-			selectedSpawner.Spawn();
+			if(!selectedSpawner.IsSpawning) selectedSpawner.Spawn();
 		}
 	}
 }
