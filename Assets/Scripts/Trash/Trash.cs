@@ -12,6 +12,8 @@ namespace Biweekly
 		private GameObjectUnityEvent _onPlayerCollision = null;
 		[SerializeField]
 		private UnityEvent _onDrop = null;
+		[SerializeField]
+		private UnityEvent _onDispose = null;
 		
 		// References
 		private TrashMovement _movement = null;
@@ -43,6 +45,7 @@ namespace Biweekly
 		{
 			if (other.CompareTag("Trash Disposal Destination") && _movement.IsFalling)
 			{
+				_onDispose.Invoke();
 				Kill();
 			}
 		}

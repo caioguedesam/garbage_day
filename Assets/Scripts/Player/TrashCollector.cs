@@ -7,18 +7,22 @@ namespace Biweekly
 {
 	public sealed class TrashCollector : MonoBehaviour
 	{
-		// References
+		[Header("References")]
 		[SerializeField]
 		private Transform _trashParent = null;
 		[SerializeField]
 		private CarryWeightList _carryWeightList = null;
 		
-		// Collection Variables
+		[Header("Collection Variables")]
 		[SerializeField, Min(0)]
 		private int _carryCapacity = 1;
 		[SerializeField]
 		private int _collectedTrashLayer = 0;
 		private Stack<Trash> _collectedTrash = new Stack<Trash>();
+
+		[Header("Events")]
+		[SerializeField]
+		private GameObjectUnityEvent _onCollectedTrash = null;
 
 		public float CarryWeightModifier => _carryWeightList.GetWeightModifier(_collectedTrash.Count);
 		public bool IsEmpty => _collectedTrash.Count == 0;
@@ -30,6 +34,7 @@ namespace Biweekly
 
 			if (_collectedTrash.Count >= _carryCapacity) return;
 			StashTrash(trash);
+			_onCollectedTrash.Invoke(trash.gameObject);
 		}
 
 		private void StashTrash(Trash trash)
