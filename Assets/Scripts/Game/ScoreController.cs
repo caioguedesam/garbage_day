@@ -11,6 +11,8 @@ namespace Biweekly
 		[SerializeField]
 		private GameDifficultyController _difficultyController = null;
 
+		private bool _active = true;
+		
 		[Header("Events")]
 		[SerializeField]
 		private IntUnityEvent _onScoreUpdate = null;
@@ -23,11 +25,14 @@ namespace Biweekly
 		private void ResetScore()
 		{
 			_scoreData.ResetScore();
+			_active = true;
 			PropagateScoreChange();
 		}
 
 		public void IncreaseScore()
 		{
+			if (!_active) return;
+			
 			int increase = _difficultyController.CurrentDifficultyIncrement.scorePerPickup;
 			_scoreData.IncreaseScore(increase);
 			PropagateScoreChange();
@@ -36,6 +41,11 @@ namespace Biweekly
 		private void PropagateScoreChange()
 		{
 			_onScoreUpdate.Invoke(_scoreData.Score);
+		}
+
+		public void Deactivate()
+		{
+			_active = false;
 		}
 	}
 }
