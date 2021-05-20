@@ -34,6 +34,8 @@ namespace Biweekly
 					DifficultyIncrement.maxSpawnCooldown);
 				Debug.Log($"Waiting {spawnCooldown} seconds for next spawn");
 				yield return new WaitForSeconds(spawnCooldown);
+				if (!_active) yield break;
+				
 				Spawn();
 			}
 		}

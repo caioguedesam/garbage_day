@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 344744766914245117}
   - component: {fileID: 344744766914245114}
   - component: {fileID: 4316382012895020195}
+  - component: {fileID: 5528744971847489384}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -326,6 +327,34 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Biweekly.PlayerLives, Assembly-CSharp
         m_MethodName: TakeDamage
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5528744971847489384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344744766914245110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41994fa935e547f2a7391727e2effc1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: f34cf8ff63ffe8b41b2d8e6b5bef7185, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 344744766914245112}
+        m_TargetAssemblyTypeName: Biweekly.PlayerInputController, Assembly-CSharp
+        m_MethodName: ToggleGameplayInput
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -31,6 +31,24 @@ namespace Biweekly
 			if (_disposeInput) _disposeInput = false;
 		}
 
+		public void ToggleGameplayInput(bool value)
+		{
+			if(value) 
+				AllowGameplayInput();
+			else 
+				StopGameplayInput();
+		}
+
+		private void StopGameplayInput()
+		{
+			if(_actions.Gameplay.enabled) _actions.Gameplay.Disable();
+		}
+
+		private void AllowGameplayInput()
+		{
+			if(!_actions.Gameplay.enabled) _actions.Gameplay.Enable();
+		}
+
 		public void OnMovement(InputAction.CallbackContext context)
 		{
 			_horizontalInput = context.performed ? context.ReadValue<float>() : 0f;
