@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace Biweekly
@@ -22,6 +23,10 @@ namespace Biweekly
 		private float _disposeJumpTime = 0f;
 		[SerializeField]
 		private bool _canDispose = false;
+
+		[Header("Events")]
+		[SerializeField]
+		private UnityEvent _onTrashThrow = null;
 
 		private void Awake()
 		{
@@ -73,6 +78,7 @@ namespace Biweekly
 			float jumpDist = ((Vector2)_disposalPoint.position - startPos).x;
 			
 			disposedTrash.Movement.Jump(jumpHeight, _disposeJumpTime/2f, jumpDist/2);
+			_onTrashThrow.Invoke();
 		}
 	}
 }

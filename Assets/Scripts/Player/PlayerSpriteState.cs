@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Biweekly
 {
@@ -39,6 +40,10 @@ namespace Biweekly
 		private bool _lastFrameFacingRight = true;
 
 		// TODO: Add on collect events with animator
+		[SerializeField]
+		private UnityEvent _onCollectedTrash = null;
+		[SerializeField]
+		private UnityEvent _onDisposedTrash = null;
 
 		private void Awake()
 		{
@@ -93,6 +98,16 @@ namespace Biweekly
 		{
 			animator.SetFloat(_animatorSpeedParam, speed);
 			animator.SetBool(_animatorFlipParam, !_lastFrameFacingRight);
+		}
+
+		public void OnCollect()
+		{
+			_onCollectedTrash.Invoke();
+		}
+
+		public void OnDispose()
+		{
+			_onDisposedTrash.Invoke();
 		}
 	}
 }
