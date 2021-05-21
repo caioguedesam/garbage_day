@@ -78,10 +78,12 @@ MonoBehaviour:
   _bodySprite: {fileID: 4891096378586735317}
   _wheelLeftSprite: {fileID: 5918230044704339547}
   _wheelRightSprite: {fileID: 1093377898340381538}
-  _movement: {fileID: 0}
+  _movement: {fileID: 344744766914245115}
   _wheelLeftAnimator: {fileID: 5582063831342452866}
   _wheelRightAnimator: {fileID: 2000029123642004753}
+  _animatorFlipParam: Flip
   _animatorSpeedParam: Speed
+  _wheelAnimationModifier: 0.35
   _topWheelOrder: 100
   _bottomWheelOrder: 20
 --- !u!1 &344744766914245110

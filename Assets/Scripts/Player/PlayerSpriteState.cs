@@ -20,10 +20,16 @@ namespace Biweekly
 		private Animator _wheelLeftAnimator = null;
 		[SerializeField]
 		private Animator _wheelRightAnimator = null;
+		private PlayerInputController _input = null;
+
+		[Header("Animation Control")]
+		[SerializeField]
+		private string _animatorFlipParam = "";
 		[SerializeField]
 		private string _animatorSpeedParam = "";
-		private PlayerInputController _input = null;
-		
+		[SerializeField, Min(0f)]
+		private float _wheelAnimationModifier = 1f;
+
 		[Header("Rendering Variables")]
 		[SerializeField]
 		private int _topWheelOrder = 0;
@@ -62,6 +68,8 @@ namespace Biweekly
 		private void Flip(bool right)
 		{
 			_bodySprite.flipX = !right;
+			_wheelLeftSprite.flipX = !right;
+			_wheelRightSprite.flipX = !right;
 			if (right)
 			{
 				_wheelLeftSprite.sortingOrder = _topWheelOrder;
@@ -76,9 +84,15 @@ namespace Biweekly
 
 		private void UpdateWheelAnimators()
 		{
-			float speed = Mathf.Abs(_movement.MoveSpeed);
-			_wheelLeftAnimator.SetTrigger(_animatorSpeedParam);
-			_wheelRightAnimator.SetTrigger(_animatorSpeedParam);
+			float speed = _movement.MoveSpeed * _wheelAnimationModifier;
+			UpdateWheelAnimator(_wheelLeftAnimator, speed);
+			UpdateWheelAnimator(_wheelRightAnimator, speed);
+		}
+
+		private void UpdateWheelAnimator(Animator animator, float speed)
+		{
+			animator.SetFloat(_animatorSpeedParam, speed);
+			animator.SetBool(_animatorFlipParam, !_lastFrameFacingRight);
 		}
 	}
 }

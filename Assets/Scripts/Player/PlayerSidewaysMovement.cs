@@ -22,7 +22,7 @@ namespace Biweekly
 		private float _moveSpeed = 0f;
 		private bool _onMovement = false;
 
-		public float MoveSpeed => _moveSpeed;
+		public float MoveSpeed => _moveSpeed * WeightModifier;
 		private float WeightModifier => _trashCollector.CarryWeightModifier;
 
 		private void Awake()
