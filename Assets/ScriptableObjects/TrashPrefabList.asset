@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: TrashPrefabList
   m_EditorClassIdentifier: 
   _trashPrefabs:
-  - {fileID: 1807013431073613435, guid: 309662bdb6d859e4f9eb2ef0a7e5ed01, type: 3}
-  - {fileID: 1382114784591050490, guid: e34da0047afc2bc49a4a6af78e59848c, type: 3}
+  - {fileID: 4642589657394792661, guid: 3499debc542dbbb4c8c5931af161c9b7, type: 3}
+  - {fileID: 698256410057894360, guid: 7dd612da2f061aa458263d0ba2c67e20, type: 3}
+  - {fileID: 7535904251069161648, guid: 616925cfcfad3d541833d2b230f07e4e, type: 3}
+  - {fileID: 5795179015187720996, guid: a1a471370fd8f744c823da40b3d66cbb, type: 3}
+  - {fileID: 331208936352817112, guid: eb5fef7c552fdd84eae165ba995b1d56, type: 3}
+  - {fileID: 6069578350304019581, guid: 022a76561a188f14e93a16a851286f50, type: 3}
+  - {fileID: 4898063121436420414, guid: 7d7d2dbb412220a4d952f32940e8aa29, type: 3}
