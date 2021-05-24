@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 0f17e5a8b22491f4180519cc9742c836
+guid: 8fb7b71eceb98b24bbbffc663b13b85f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -283379824629783925
+      213: 4311552848566868286
     second: trashbot_wheel_0
   - first:
-      213: 6571082535464498183
+      213: 6438281894957973022
     second: trashbot_wheel_1
   - first:
-      213: -6691848194332450867
+      213: -3449025575617366000
     second: trashbot_wheel_2
   - first:
-      213: -5591411880627913701
+      213: 1611269011253596422
     second: trashbot_wheel_3
   externalObjects: {}
   serializedVersion: 11
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b82ed680d8b311cf0800000000000000
-      internalID: -283379824629783925
+      spriteID: e39d621e876b5db30800000000000000
+      internalID: 4311552848566868286
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 704722c30cc213b50800000000000000
-      internalID: 6571082535464498183
+      spriteID: e1e7cc0a54f595950800000000000000
+      internalID: 6438281894957973022
       vertices: []
       indices: 
       edges: []
@@ -183,8 +183,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcf99fda587c123a0800000000000000
-      internalID: -6691848194332450867
+      spriteID: 018f61043899220d0800000000000000
+      internalID: -3449025575617366000
       vertices: []
       indices: 
       edges: []
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c3646e4805762b0800000000000000
-      internalID: -5591411880627913701
+      spriteID: 6019d5df0a06c5610800000000000000
+      internalID: 1611269011253596422
       vertices: []
       indices: 
       edges: []

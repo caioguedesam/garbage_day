@@ -195,7 +195,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: 375500908e0d5d74f8e2dcb372bdaad5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8962186, b: 0.7783019, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
@@ -556,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
@@ -832,7 +832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
@@ -1443,7 +1443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
@@ -2232,11 +2232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184860822586882888, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.34
+      value: 1.62
       objectReference: {fileID: 0}
     - target: {fileID: 2184860822586882888, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.95
+      value: 3.09
       objectReference: {fileID: 0}
     - target: {fileID: 2184860822586882888, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
       propertyPath: m_LocalPosition.z
