@@ -21,7 +21,6 @@ namespace Biweekly
 		private float _maxDisposeJumpHeight = 0f;
 		[SerializeField, Range(0f, 2f)]
 		private float _disposeJumpTime = 0f;
-		[SerializeField]
 		private bool _canDispose = false;
 
 		[Header("Events")]

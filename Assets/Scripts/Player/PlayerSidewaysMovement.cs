@@ -23,6 +23,20 @@ namespace Biweekly
 		private bool _onMovement = false;
 
 		public float MoveSpeed => _moveSpeed * WeightModifier;
+		public float NormalizedMoveSpeed
+		{
+			get
+			{
+				if (_moveSpeed < _startMoveSpeed && _moveSpeed > -_startMoveSpeed) return 0f;
+				if (_moveSpeed >= 0)
+				{
+					return (_moveSpeed - _startMoveSpeed) / (_maximumMoveSpeed - _startMoveSpeed);
+				}
+
+				float s = Mathf.Abs(_moveSpeed);
+				return -((s - _startMoveSpeed) / (_maximumMoveSpeed - _startMoveSpeed));
+			}
+		}
 		private float WeightModifier => _trashCollector.CarryWeightModifier;
 
 		private void Awake()

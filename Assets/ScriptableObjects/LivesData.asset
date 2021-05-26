@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 561f76effe2345ceb1ad2776697ce76d, type: 3}
   m_Name: LivesData
   m_EditorClassIdentifier: 
-  _maxLives: 1
+  _maxLives: 5
   _onDeath:
     m_PersistentCalls:
       m_Calls:

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: IntEvent_UpdateScore
   m_EditorClassIdentifier: 
   _description: 
-  _debug: 1
+  _debug: 0

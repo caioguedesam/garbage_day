@@ -21,6 +21,12 @@ namespace Biweekly
 		private Animator _wheelLeftAnimator = null;
 		[SerializeField]
 		private Animator _wheelRightAnimator = null;
+		[SerializeField]
+		private ParticleSystem _dustParticles = null;
+		[SerializeField]
+		private Transform _dustPositionLeft = null;
+		[SerializeField]
+		private Transform _dustPositionRight = null;
 		private PlayerInputController _input = null;
 
 		[Header("Animation Control")]
@@ -30,6 +36,10 @@ namespace Biweekly
 		private string _animatorSpeedParam = "";
 		[SerializeField, Min(0f)]
 		private float _wheelAnimationModifier = 1f;
+		[SerializeField, Min(0f)]
+		private float _minDustEmission = 1f;
+		[SerializeField, Min(0f)]
+		private float _maxDustEmission = 1f;
 
 		[Header("Rendering Variables")]
 		[SerializeField]
@@ -38,8 +48,7 @@ namespace Biweekly
 		private int _bottomWheelOrder = 0;
 
 		private bool _lastFrameFacingRight = true;
-
-		// TODO: Add on collect events with animator
+		
 		[SerializeField]
 		private UnityEvent _onCollectedTrash = null;
 		[SerializeField]
@@ -54,6 +63,7 @@ namespace Biweekly
 		{
 			UpdateFacingState();
 			UpdateWheelAnimators();
+			UpdateDustParticles();
 		}
 
 		private void UpdateFacingState()
@@ -75,6 +85,7 @@ namespace Biweekly
 			_bodySprite.flipX = !right;
 			_wheelLeftSprite.flipX = !right;
 			_wheelRightSprite.flipX = !right;
+			FlipDustParticle(right);
 			if (right)
 			{
 				_wheelLeftSprite.sortingOrder = _topWheelOrder;
@@ -98,6 +109,25 @@ namespace Biweekly
 		{
 			animator.SetFloat(_animatorSpeedParam, speed);
 			animator.SetBool(_animatorFlipParam, !_lastFrameFacingRight);
+		}
+
+		private void UpdateDustParticles()
+		{
+			float dustEmission = 0f;
+			float t = Mathf.Abs(_movement.NormalizedMoveSpeed);
+			if (t > 0)
+			{
+				dustEmission =
+					Mathf.Lerp(_minDustEmission, _maxDustEmission, t);
+			}
+			ParticleSystem.EmissionModule emission = _dustParticles.emission;
+			emission.rateOverTime = dustEmission;
+		}
+
+		private void FlipDustParticle(bool right)
+		{
+			_dustParticles.transform.localPosition = right ? _dustPositionLeft.localPosition : _dustPositionRight.localPosition;
+			_dustParticles.transform.eulerAngles = right ? new Vector3(0f, 0f, 0f) : new Vector3(0f, 180f, 0f);
 		}
 
 		public void OnCollect()
