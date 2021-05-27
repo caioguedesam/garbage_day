@@ -12,5 +12,7 @@ namespace Biweekly
 		public float maxSpawnCooldown = 0f;
 		[Min(0f)]
 		public float timeUntilNextIncrement = 0f;
+		[Min(0)]
+		public int scorePerPickup = 0;
 	}
 }

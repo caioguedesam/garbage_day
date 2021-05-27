@@ -34,6 +34,8 @@ namespace Biweekly
 					DifficultyIncrement.maxSpawnCooldown);
 				Debug.Log($"Waiting {spawnCooldown} seconds for next spawn");
 				yield return new WaitForSeconds(spawnCooldown);
+				if (!_active) yield break;
+				
 				Spawn();
 			}
 		}
@@ -42,6 +44,11 @@ namespace Biweekly
 		{
 			TrashSpawner selectedSpawner = _spawners[Random.Range(0, _spawners.Count)];
 			if(!selectedSpawner.IsSpawning) selectedSpawner.Spawn();
+		}
+
+		public void Stop()
+		{
+			_active = false;
 		}
 	}
 }

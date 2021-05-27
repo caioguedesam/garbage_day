@@ -16,3 +16,8 @@ MonoBehaviour:
   - minSpawnCooldown: 5
     maxSpawnCooldown: 5
     timeUntilNextIncrement: 20
+    scorePerPickup: 10
+  - minSpawnCooldown: 5
+    maxSpawnCooldown: 5
+    timeUntilNextIncrement: 20
+    scorePerPickup: 100
