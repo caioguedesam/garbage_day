@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Biweekly
@@ -12,8 +11,10 @@ namespace Biweekly
 		// Input Variables
 		private float _horizontalInput = 0f;
 		private bool _disposeInput = false;
+		private bool _pauseInput = false;
 		public float HorizontalInput => _horizontalInput;
 		public bool DisposeInput => _disposeInput;
+		public bool PauseInput => _pauseInput;
 
 		private void OnEnable()
 		{
@@ -29,6 +30,7 @@ namespace Biweekly
 		private void LateUpdate()
 		{
 			if (_disposeInput) _disposeInput = false;
+			if (_pauseInput) _pauseInput = false;
 		}
 
 		public void ToggleGameplayInput(bool value)
@@ -59,6 +61,14 @@ namespace Biweekly
 			if (context.started)
 			{
 				_disposeInput = true;
+			}
+		}
+
+		public void OnPause(InputAction.CallbackContext context)
+		{
+			if (context.started)
+			{
+				_pauseInput = true;
 			}
 		}
 	}
