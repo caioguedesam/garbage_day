@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Spawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
 --- !u!4 &42038041 stripped
@@ -1300,6 +1304,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Spawner (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
 --- !u!4 &599833761 stripped
@@ -1483,6 +1491,7 @@ MonoBehaviour:
   - {fileID: -8463403533825738048, guid: bb2162849e7a0b04d8573ddedd72d7c0, type: 3}
   - {fileID: -7541212655062255411, guid: bb2162849e7a0b04d8573ddedd72d7c0, type: 3}
   - {fileID: -2578081334375638633, guid: bb2162849e7a0b04d8573ddedd72d7c0, type: 3}
+  - {fileID: 2475583234183630933, guid: bb2162849e7a0b04d8573ddedd72d7c0, type: 3}
   - {fileID: 1774575064355345605, guid: bb2162849e7a0b04d8573ddedd72d7c0, type: 3}
   _fullTextObject: {fileID: 2124192178}
   _onIncreased:
@@ -1734,7 +1743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2475583234183630933, guid: bb2162849e7a0b04d8573ddedd72d7c0, type: 3}
+  m_Sprite: {fileID: 3852168499215319666, guid: bb2162849e7a0b04d8573ddedd72d7c0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1990,6 +1999,10 @@ PrefabInstance:
     - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
       propertyPath: m_Name
       value: Trash Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
@@ -2881,6 +2894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trash Spawner (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
 --- !u!4 &1372102645 stripped
@@ -3004,6 +3021,10 @@ PrefabInstance:
     - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
       propertyPath: m_Name
       value: Trash Spawner (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2184860822586882895, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6784155d6fb5d9c4d8ef957bb721bd84, type: 3}

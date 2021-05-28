@@ -129,10 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611c54fc361503b48a9ce4d0b3153032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minJumpHeight: 0.2
-  _maxJumpHeight: 1
-  _minJumpApexTime: 0.2
-  _maxJumpApexTime: 0.35
+  _minJumpHeight: 0.5
+  _maxJumpHeight: 0.5
+  _minJumpApexTime: 0.5
+  _maxJumpApexTime: 0.5
   _jumpDistanceRange: 0.5
 --- !u!61 &8936564502018524442
 BoxCollider2D:
@@ -327,7 +327,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 47a48633441e92f4c912c27828baa186, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 0
   Mute: 0

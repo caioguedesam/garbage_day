@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashPrefabs: {fileID: 11400000, guid: c5d2816d3c71aeb4caf3cc7e760a7d5f, type: 2}
-  _onSpawn:
+  _onStartedSpawn:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3700297166533266858}
@@ -62,7 +62,7 @@ MonoBehaviour:
           m_StringArgument: Spawn
           m_BoolArgument: 0
         m_CallState: 2
-  _onFinishedSpawn:
+  _onSpawnedTrash:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8698145039496790696}
@@ -77,6 +77,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onFinishedSpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &3700297166533266858
 Animator:
   serializedVersion: 3
@@ -221,7 +224,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aabca2bc3e9ba3442a3c65660497d47c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 0
   Mute: 0

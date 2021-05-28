@@ -5116,7 +5116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trashParent: {fileID: 7762498201510274558}
   _carryWeightList: {fileID: 11400000, guid: af85ff73daf8d8a40b2b81fdc31ac39c, type: 2}
-  _carryCapacity: 3
+  _carryCapacity: 4
   _collectedTrashLayer: 12
   _onCollectedTrash:
     m_PersistentCalls:

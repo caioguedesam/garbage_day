@@ -13,11 +13,51 @@ MonoBehaviour:
   m_Name: GameDifficultyData
   m_EditorClassIdentifier: 
   _difficultyIncrements:
-  - minSpawnCooldown: 5
-    maxSpawnCooldown: 5
+  - minSpawnCooldown: 4
+    maxSpawnCooldown: 4
     timeUntilNextIncrement: 20
     scorePerPickup: 10
-  - minSpawnCooldown: 5
-    maxSpawnCooldown: 5
+  - minSpawnCooldown: 3.5
+    maxSpawnCooldown: 3.5
     timeUntilNextIncrement: 20
+    scorePerPickup: 20
+  - minSpawnCooldown: 3
+    maxSpawnCooldown: 3
+    timeUntilNextIncrement: 30
+    scorePerPickup: 50
+  - minSpawnCooldown: 2.75
+    maxSpawnCooldown: 2.75
+    timeUntilNextIncrement: 30
+    scorePerPickup: 75
+  - minSpawnCooldown: 2.5
+    maxSpawnCooldown: 2.5
+    timeUntilNextIncrement: 40
     scorePerPickup: 100
+  - minSpawnCooldown: 2
+    maxSpawnCooldown: 2
+    timeUntilNextIncrement: 80
+    scorePerPickup: 150
+  - minSpawnCooldown: 1.85
+    maxSpawnCooldown: 1.85
+    timeUntilNextIncrement: 80
+    scorePerPickup: 200
+  - minSpawnCooldown: 1.7
+    maxSpawnCooldown: 1.7
+    timeUntilNextIncrement: 80
+    scorePerPickup: 250
+  - minSpawnCooldown: 1.65
+    maxSpawnCooldown: 1.65
+    timeUntilNextIncrement: 100
+    scorePerPickup: 250
+  - minSpawnCooldown: 1.5
+    maxSpawnCooldown: 1.5
+    timeUntilNextIncrement: 100
+    scorePerPickup: 350
+  - minSpawnCooldown: 1.4
+    maxSpawnCooldown: 1.4
+    timeUntilNextIncrement: 150
+    scorePerPickup: 500
+  - minSpawnCooldown: 1.25
+    maxSpawnCooldown: 1.25
+    timeUntilNextIncrement: 150
+    scorePerPickup: 650
