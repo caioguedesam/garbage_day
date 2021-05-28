@@ -19,7 +19,7 @@ MonoBehaviour:
     scorePerPickup: 10
   - minSpawnCooldown: 3.5
     maxSpawnCooldown: 3.5
-    timeUntilNextIncrement: 20
+    timeUntilNextIncrement: 30
     scorePerPickup: 20
   - minSpawnCooldown: 3
     maxSpawnCooldown: 3
@@ -35,27 +35,27 @@ MonoBehaviour:
     scorePerPickup: 100
   - minSpawnCooldown: 2
     maxSpawnCooldown: 2
-    timeUntilNextIncrement: 80
+    timeUntilNextIncrement: 60
     scorePerPickup: 150
   - minSpawnCooldown: 1.85
     maxSpawnCooldown: 1.85
-    timeUntilNextIncrement: 80
+    timeUntilNextIncrement: 60
     scorePerPickup: 200
   - minSpawnCooldown: 1.7
     maxSpawnCooldown: 1.7
-    timeUntilNextIncrement: 80
+    timeUntilNextIncrement: 60
     scorePerPickup: 250
   - minSpawnCooldown: 1.65
     maxSpawnCooldown: 1.65
-    timeUntilNextIncrement: 100
+    timeUntilNextIncrement: 60
     scorePerPickup: 250
   - minSpawnCooldown: 1.5
     maxSpawnCooldown: 1.5
-    timeUntilNextIncrement: 100
+    timeUntilNextIncrement: 60
     scorePerPickup: 350
   - minSpawnCooldown: 1.4
     maxSpawnCooldown: 1.4
-    timeUntilNextIncrement: 150
+    timeUntilNextIncrement: 60
     scorePerPickup: 500
   - minSpawnCooldown: 1.25
     maxSpawnCooldown: 1.25

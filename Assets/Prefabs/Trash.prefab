@@ -129,11 +129,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611c54fc361503b48a9ce4d0b3153032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minJumpHeight: 0.5
-  _maxJumpHeight: 0.5
-  _minJumpApexTime: 0.5
-  _maxJumpApexTime: 0.5
-  _jumpDistanceRange: 0.5
+  _initialJumpDistanceRange: 1
+  _initialJumpHeight: 1.5
+  _initialJumpTime: 0.8
+  _fallTime: 2.2
+  _groundLayers:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!61 &8936564502018524442
 BoxCollider2D:
   m_ObjectHideFlags: 0
