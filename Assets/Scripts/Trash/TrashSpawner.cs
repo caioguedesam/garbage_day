@@ -9,7 +9,9 @@ namespace Biweekly
 		[SerializeField]
 		private TrashPrefabList _trashPrefabs = null;
 		[SerializeField]
-		private UnityEvent _onSpawn = null;
+		private UnityEvent _onStartedSpawn = null;
+		[SerializeField]
+		private UnityEvent _onSpawnedTrash = null;
 		[SerializeField]
 		private UnityEvent _onFinishedSpawn = null;
 		
@@ -23,14 +25,21 @@ namespace Biweekly
 			if (_isSpawning) return;
 			
 			_isSpawning = true;
-			_onSpawn.Invoke();
+			_onStartedSpawn.Invoke();
+		}
+
+		public void ThrowTrash()
+		{
+			if (!_isSpawning) return;
+			
+			Instantiate(_trashPrefabs.GetRandomTrash(), transform);
+			_onSpawnedTrash.Invoke();
 		}
 
 		public void FinishSpawn()
 		{
 			if (!_isSpawning) return;
 			
-			Instantiate(_trashPrefabs.GetRandomTrash(), transform);
 			_onFinishedSpawn.Invoke();
 			_isSpawning = false;
 		}

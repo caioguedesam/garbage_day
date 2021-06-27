@@ -78,3 +78,12 @@ crashlytics-build.properties
 
 # TMP
 /[Aa]ssets/TextMesh Pro*
+
+# No tracking unrelated files for project showcase
+/[Aa]ssets/Animation*
+/[Aa]ssets/Art*
+/[Aa]ssets/Audio*
+/[Aa]ssets/Plugins*
+/[Aa]ssets/Prefabs*
+/[Aa]ssets/Resources*
+/[Aa]ssets/Scenes*

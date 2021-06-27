@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d40115436a124dcfaeac63ad544d3b0c, type: 3}
-  m_Name: CarryWeightList
+  m_Script: {fileID: 11500000, guid: ed7c4699534e40c8aab35c1e56d9c18b, type: 3}
+  m_Name: Event_OnUnpause
   m_EditorClassIdentifier: 
-  percentages:
-  - 0.7
-  - 0.6
-  - 0.5
-  - 0.4
+  _description: 
+  _debug: 0

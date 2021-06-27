@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,19 +9,20 @@ namespace Biweekly
 		// References
 		private Rigidbody2D _body = null;
 		
-		[Header("Random Jump Variables")]
+		[Header("Jump Variables")]
 		[SerializeField, Min(0f)]
-		private float _minJumpHeight = 0f;
+		private float _initialJumpDistanceRange = 0f;
 		[SerializeField, Min(0f)]
-		private float _maxJumpHeight = 0f;
+		private float _initialJumpHeight = 0f;
 		[SerializeField, Min(0f)]
-		private float _minJumpApexTime = 0f;
-		[SerializeField, Min(0f)]
-		private float _maxJumpApexTime = 0f;
-		[SerializeField, Min(0f)]
-		private float _jumpDistanceRange = 0f;
+		private float _initialJumpTime = 0f;
+		[SerializeField]
+		private float _fallTime = 0f;
+		[SerializeField]
+		private LayerMask _groundLayers = 0;
 
 		private Vector2 _gravity = Vector2.zero;
+		private bool _isJumping = false;
 
 		public bool IsFalling => _body.velocity.y < 0f;
 
@@ -31,7 +33,7 @@ namespace Biweekly
 
 		private void Start()
 		{
-			RandomJump();
+			InitialJump();
 		}
 
 		private void FixedUpdate()
@@ -47,16 +49,32 @@ namespace Biweekly
 			_body.velocity = new Vector2(velX, velY);
 		}
 
-		private void RandomJump()
+		private void InitialJump()
 		{
-			float height = Random.Range(_minJumpHeight, _maxJumpHeight);
-			float time = Random.Range(_minJumpApexTime, _maxJumpApexTime);
-			float dist = Random.Range(-_jumpDistanceRange, _jumpDistanceRange);
+			if (!_isJumping) StartCoroutine(InitialJumpRoutine());
+		}
 
-			_gravity = GetGravity(height, time);
-			float velX = dist / time;
-			float velY = 2 * height / time;
+		private IEnumerator InitialJumpRoutine()
+		{
+			// Jump
+			_isJumping = true;
+			float dist = Random.Range(-_initialJumpDistanceRange, _initialJumpDistanceRange);
+			float velX = dist / _initialJumpTime;
+			float velY = 2 * _initialJumpHeight / _initialJumpTime;
+			_gravity = GetGravity(_initialJumpHeight, _initialJumpTime);
 			_body.velocity = new Vector2(velX, velY);
+
+			yield return new WaitUntil(() => IsFalling);
+			
+			// Fall
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 100f, _groundLayers);
+			if (hit.collider != null)
+			{
+				dist = hit.distance;
+				_gravity = GetGravity(dist, _fallTime);
+			}
+			
+			_isJumping = false;
 		}
 
 		private static Vector2 GetGravity(float height, float time)

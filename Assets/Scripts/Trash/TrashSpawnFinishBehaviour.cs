@@ -2,7 +2,7 @@
 
 namespace Biweekly
 {
-	public sealed class TrashSpawnAnimBehaviour : StateMachineBehaviour
+	public sealed class TrashSpawnFinishBehaviour : StateMachineBehaviour
 	{
 		public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 		{

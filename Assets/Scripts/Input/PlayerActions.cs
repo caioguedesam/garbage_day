@@ -35,6 +35,14 @@ namespace Biweekly
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""417490ee-09de-457e-b31b-037f9cb3e655"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -125,6 +133,17 @@ namespace Biweekly
                     ""action"": ""Dispose"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af41e8db-8474-4680-81f0-07861e9177f1"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -152,6 +171,7 @@ namespace Biweekly
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
             m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
             m_Gameplay_Dispose = m_Gameplay.FindAction("Dispose", throwIfNotFound: true);
+            m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -203,12 +223,14 @@ namespace Biweekly
         private IGameplayActions m_GameplayActionsCallbackInterface;
         private readonly InputAction m_Gameplay_Movement;
         private readonly InputAction m_Gameplay_Dispose;
+        private readonly InputAction m_Gameplay_Pause;
         public struct GameplayActions
         {
             private @PlayerActions m_Wrapper;
             public GameplayActions(@PlayerActions wrapper) { m_Wrapper = wrapper; }
             public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
             public InputAction @Dispose => m_Wrapper.m_Gameplay_Dispose;
+            public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -224,6 +246,9 @@ namespace Biweekly
                     @Dispose.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDispose;
                     @Dispose.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDispose;
                     @Dispose.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnDispose;
+                    @Pause.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                    @Pause.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
+                    @Pause.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPause;
                 }
                 m_Wrapper.m_GameplayActionsCallbackInterface = instance;
                 if (instance != null)
@@ -234,6 +259,9 @@ namespace Biweekly
                     @Dispose.started += instance.OnDispose;
                     @Dispose.performed += instance.OnDispose;
                     @Dispose.canceled += instance.OnDispose;
+                    @Pause.started += instance.OnPause;
+                    @Pause.performed += instance.OnPause;
+                    @Pause.canceled += instance.OnPause;
                 }
             }
         }
@@ -251,6 +279,7 @@ namespace Biweekly
         {
             void OnMovement(InputAction.CallbackContext context);
             void OnDispose(InputAction.CallbackContext context);
+            void OnPause(InputAction.CallbackContext context);
         }
     }
 }
